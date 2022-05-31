@@ -6,7 +6,81 @@
     <title>Recipe Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+
     <style>
+		.nav{
+			height: 100%;
+			width: 0%;
+			position: fixed;
+			left: 0;
+			top: 0;
+			transition: 0.5s;
+			background: #111;
+			color: white;
+			overflow-x : hidden;
+			padding-top: 1%;
+			text-align: center;
+
+		}
+
+		.textInNav{
+  			font-family: "Lato", sans-serif;
+			color: grey;
+			font-size: 100%;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.closebtn{
+			color:grey;
+			padding-left: 85%;
+			text-decoration: none;
+			font-size: 200%;
+		}
+
+
+		.navbar a:hover {
+			color: #f1f1f1;
+		}
+/*Navbar ends*/
+
+/*Main bar*/
+		.bar{
+			border: 1px solid #D3D3D3;
+			padding-bottom: 1%;
+			border-left-style: hidden;
+			border-right-style: hidden;
+		}
+/*Main bar ends*/
+
+/*Bar elements*/
+
+		.elements{
+			display:inline;
+			list-style-type: none;
+			padding-left:15%;
+			font-size:120%;
+		}
+		li{
+			display: inline;
+			padding-right:3%;
+			font-size: 80%;
+		}
+		a{
+			text-decoration: none;
+			color:black;
+		}
+
+		.child{
+			display: inline-block;
+			width: 75%;
+		}
+
+/*Bar elements end*/
+
+
+
 *{
 box-sizing:border-box;
 }
@@ -28,10 +102,6 @@ cursor:pointer;
 
 .imge{
 padding:20px 10px 10px 50px;
-}
-
-.nav-itemm{
-font-size:13px;
 }
 
 .progress{
@@ -73,183 +143,442 @@ margin:10px 0px -3px;
 font-size:14px;"
 }
 .card-text2{
- margin:0px 0px 30px;"
+ margin:0px 0px 30px;
 }
+
     </style>
+
+
+    	<script>
+
+
+// Navbar's open button...
+		function menuOpen()
+		{
+			document.getElementById("navbar").style.width = "25%";
+			document.getElementById("main").style.marginLeft = "25%";
+		}
+
+//Navbar's close button...
+		function menuClose()
+		{
+			document.getElementById("navbar").style.width = "0%";
+			document.getElementById("main").style.marginLeft = "0%";
+
+		}
+	</script>
+
+
+
 </head>
 <body>
 
-<div class="imge">
-    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2018/03/13a.png" height="51px"
-         width="262px"/>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-2">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
+<!--NAVIGATION BAR CODE-->
+<!--Recipe Pro icon-->
+    	<div>
+		<img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2018/03/13a.png"
+ 		style = "height:8%; width:28%; padding:3%">
+    	</div>
 
-        <div class="col-9">
-            <ul class="nav nav-tabs">
-                <li class="nav-itemm">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-itemm dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       style="color:black" aria-expanded="false">Mega Menu</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Pasta</a></li>
-                        <li><a class="dropdown-item" href="#">Chicken</a></li>
-                        <li><a class="dropdown-item" href="#">Beef</a></li>
-                    </ul>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Duck</a>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Beef</a>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Pasta</a>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Duck</a>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Chicken</a>
-                </li>
-                <li class="nav-itemm">
-                    <a class="nav-link" href="#" style="color:black">Contact</a>
-                </li>
-            </ul>
+	<div class = "bar">
+<!--Navbar-->
+		<div	class = "child" style = "padding-left: 2%; font-size:150%; cursor:pointer; width: 10%;"
+                onclick = "menuOpen()" id = "main">
+			&#9776;
+		</div>
+<!--Bar elements-->
+		<div class= "child">
+			<ul class = "elements">
+  				<li><a href="#home">Home</a></li>
+  				<li><a href="#megaMenu">Mega Menu</a></li>
+  				<li><a href="#Duck">Duck</a></li>
+				<li><a href="#Beef">Beef</a></li>
+  				<li><a href="#Past">Pasta</a></li>
+  				<li><a href="#chicken">Chicken</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li style = "padding-left: 17%; font-size: 125%;"><a href="#search">&#9906;</a></li>
+			</ul>
+		</div>
+    </div>
+<!--Bar elements end>
+
+<! -- Bar ends-->
+<!-- Navbar(menu)-->
+	<div class = "nav" id = "navbar">
+		<a href = "javascript:void(0)" class = "closebtn" onclick = "menuClose()">&times</a><br><br><br><br>
+		<a href = "https://themebubble.com/demo/magplus/recipepro/wp-login.php?redirect_to=https%3A%2F%2Fthemebubble.com%2Fdemo%2Fmagplus%2Frecipepro%2Fwp-admin%2Fnav-menus.php&reauth=1"
+		class = "text">you can edit your menu content on the <br>Menus screen in the Appearence<br>section.</a>
+	</div>
+<!-- Navbar(menu) ends-->
+
+
+<!-- 4 MAJOR IMAGES MIDDLE BEGINNING CODE-->
+    <div class="row">
+        <div class="column">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca.jpg"
+                 width="100%" height="100%">
+        </div>
+        <div class="column">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk.jpg"
+                 width="100%" height="100%">
+        </div>
+        <div class="column">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1.jpeg"
+                 width="100%" height="100%">
+        </div>
+        <div class="column">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq.jpg"
+                 width="227px" height="406px">
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="column">
-        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca.jpg"
-             width="100%" height="350px">
-    </div>
-    <div class="column">
-        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk.jpg"
-             width="100%" height="350px">
-    </div>
-    <div class="column">
-        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1.jpeg"
-             width="100%" height="350px">
-    </div>
-    <div class="column">
-        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq.jpg"
-             width="100%" height="350px">
-    </div>
-</div>
+
+
+<!--WHAT'S NEW PART MIDDLE CODE-->
 <div class="card-group">
-    <div class="card" style="border:none; margin:0px 40px;">
+    <div class="card" style="margin:0px 40px; height:810px; border:none;">
         <div class="text">
-            <div class="text info1" style=" margin:50px 10px 5px 20px; font-size:12px; font:bold;">What's New</div>
-            <div class="progress" style="width:345px; height:4px; margin:5px 8px 25px 20px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 17%; background:warning;"
+            <div class="text info1" style=" margin:50px 0px 5px 5px; font-size:12px; font:bold;">What's New</div>
+            <div class="progress" style="width:95%; height:3%; margin:0% 0% 6% 2%;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 17%;"
                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="40"></div>
             </div>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca-394x218.jpg"
-             style="width:345px; height:190px; margin-left:20px;;" class="card-img-top" alt="...">
+             style="width:95%; height:66%; margin-left:5px;" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text" style="margin:0px;">Flank Steak with Orange and Avocado Salsa</p>
             <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+            <hr style="width:100%;text-align:left;margin:2% 0%;">
+        </div>
+        <div class="jek1">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text1">
+                <div class="info" style="font-size:13px;"> Meal Plan for March Week 1</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek1">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-80x80.jpeg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text1">
+                <div class="info" style="font-size:13px;"> Quick Chicken Pho</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek1">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text1">
+                <div class="info" style="font-size:13px;"> Carrot Ginger Soup</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek1">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text1">
+                <div class="info" style="font-size:13px;"> No-Soak Beans in the Pressure Cooker</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></div>
+            <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+
+
+<!--BUYING GUIDE BAR AND BUTTONS CODE-->
+        <div class="buylead" style="  margin-left:10px; width:720px; height:200px;">
+            <div class="tt" style="margin-left:3%; margin-top:7%; font-size:13px;">Buying Guide</div>
+            <div class="progress" style="height: 2.5%; width:95%; margin:5px 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0"
+                     aria-valuemax="60"></div>
+            </div>
+
+            <div class="btn-group3" role="group" style="margin-left:270px; margin-top:30px;">
+                <button type="button" class="btn btn-outline-primary">Beef</button>
+                <button type="button" class="btn btn-outline-primary">Meat</button>
+                <button type="button" class="btn btn-outline-primary">Vegetable</button>
+            </div>
+        </div>
+
+
+<!--ABOVE BEST OF THE WEEK IMAGES-->
+        <div class="container" style="width:780px; height:400px; margin:30px 10px;">
+            <div class="row">
+                <div class="col">
+                    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca-537x307.jpg"
+                         style="width:100%; height:50%; margin:0% 0%;">
+                    <div class="body-text" style="margin:0px;">Flank Steak with Orange and Avocado Salsa</div>
+                    <div class="body-text2"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                    <div class="body-text3"><small class="text-muted">Nova was the videoly that we all wanted to read in
+                        the
+                        Sixties because every issue brought something new and ...</small></div>
+                    <div class="body-text4"><small class="text-muted">💬 0 Comments 👁1255Views</small></div>
+                </div>
+                <div class="col">
+                    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-183x96.jpg"
+                         style="width:90%; height:30%; margin:2% 5%;">
+                    <div class="body-text" style="margin:2% 5%;">Meal Plan for March Week 1</div>
+                    <div class="body-text2"><small class="text-muted" style="margin:2% 5%;">George Steven • June 22, 2017</small></div>
+                    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq-183x96.jpg"
+                         style="width:90%; height:30%; margin-top:13%; margin-left:5%;">
+                    <div class="body-text" style="margin:2% 5%;">Carrot Ginger Soup</div>
+                    <div class="body-text2"><small class="text-muted" style="margin:2% 5%;">George Steven • June 22, 2017</small></div>
+                </div>
+                <div class="col">
+                    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-183x96.jpeg"
+                         style="width:90%; height:30%; margin:2% 2%;">
+                    <div class="body-text" style="margin-top:2%;">Quick Chicken Pho</div>
+                    <div class="body-text2"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                    <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-183x96.jpg"
+                         style="width:90%; height:30%; margin-top:13%;">
+                    <div class="body-text" style="margin:2% 5%;">No-Soak Beans in the Pressure Cooker</div>
+                    <div class="body-text2"><small class="text-muted" style="margin:2% 5%;">George Steven • June 22, 2017</small></div>
+                </div>
+            </div>
+        </div>
+
+
+<!--BEST OF THE WEEK CODE MIDDLE PART-->
+                <div class="buylead2" style=" margin-left:15px; width:175%;">
+            <div class="tt2" style="margin-left:30px; margin-top:30px; font-size:13px;">Best Of The Week</div>
+            <div class="progress" style="height: 3px; width:100%; margin:5px 30px;">
+                <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0"
+                     aria-valuemax="60"></div>
+            </div>
+
+    <div class="quick img" style="width:100%; margin:4% 4%;">
+         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-394x218.jpeg"
+             style="width:100%; height:295px;" class="card-img-top" alt="...">
+        <div class="cardbody_" style="height:200px;">
+            <h2 class="txt" style="margin-top:10px;">Quick Chicken Pho</h2>
+            <p class="cardtxt"><small class="text-muted" style="margin-top:10px;">George Steven • June 22, 2017</small></p>
+            <p class="cardtxt_" style="margin-top:10px;"><small>Nova was the videoly that we all wanted to read in the Sixties because every
+                issue brought something new and relevant to our lives: extraordinary fashion by Molly Parkin; innovative ...</small></p>
+            <p><small class="text-muted" style="margin-top:10px;">chat_bubble 0   Comment visibility 1301 Views</small></p>
+        </div>
+</div>
+                </div>
+
+<!--4 horizontal images code-->
+        <div class="4images">
+            <div class="row row-cols row-cols-md-4" style="width:800px;">
+  <div class="col">
+    <div class="card" style="width:183px; height:96px;">
+      <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca-183x96.jpg"
+           class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Flank Steak with Orange and Avocado Salsa</h6>
+         <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+      </div>
     </div>
+  </div>
+  <div class="col">
+    <div class="card" style="width:183px; height:96px;">
+      <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-183x96.jpg"
+           class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Meal Plan for March Week 1</h6>
+        <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+      </div>
     </div>
-    <div class="card" style="border:none;">
+  </div>
+  <div class="col">
+    <div class="card" style="width:183px; height:96px;">
+      <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-183x96.jpeg"
+           class="card-img-top" alt="...">
+      <div class="card-body">
+            <h6 class="card-title">Quick Chicken Pho</h6>
+            <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="width:183px; height:96px;">
+      <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq-183x96.jpg"
+           class="card-img-top" alt="...">
+      <div class="card-body">
+            <h6 class="card-title">Carrot Ginger Soup</h6>
+            <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+       
+</div>
+    </div>
+    
+
+<!--MOST READ PART CODE CENTER-->
+    <div class="card" style="height:810px; border:none;">
         <div class="text">
             <div class="text info2" style=" margin:50px 5px 5px 0px; font-size:12px; font:bold;">Most Read</div>
-            <div class="progress" style="width:345px; height:4px; margin:5px 5px 25px 0px;">
+            <div class="progress" style="width:95%; height:3%; margin:0% 0% 6% 2%;">
                 <div class="progress-bar bg-success" role="progressbar" style="width: 17%;" aria-valuenow="20"
                      aria-valuemin="0" aria-valuemax="40"></div>
             </div>
         </div>
+        <div class="op">
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-394x218.jpeg"
-             style="width:345px; height:190px; margin-left:5px;" class="card-img-top" alt="...">
+             style="width:95%; height:66%; margin-left:5px;" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text" style="margin:0px;">Quick Chicken Pho</p>
             <p class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></p>
+            <hr style="width:100%;text-align:left;margin:2% 0%;">
+        </div>
+            </div>
+        <div class="jek2">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/vj3ydxu6u_y-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text2">
+                <div class="info" style=" font-size:13px;"> Chili</div>
+                <div class="card-text" ><small class="text-muted">George Steven • June 22,
+                    2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek2">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text2">
+                <div class="info" style="font-size:13px;"> No-Soak Beans in the Pressure Cooker</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22, 2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek2">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text2">
+                <div class="info" style="font-size:13px;"> Meal Plan for March Week 1</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22,
+                    2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
+        </div>
+        <div class="jek2">
+            <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-80x80.jpg"
+                 style="width:80px; height:80px; float:left; margin:8px 20px;">
+            <div class="jek-text2">
+                <div class="info" style="font-size:13px;"> Hanger Steak Recipe</div>
+                <div class="card-text"><small class="text-muted">George Steven • June 22,
+                    2017</small></div>
+                <hr style="width:100%;text-align:left;margin:2% 0%;">
+            </div>
         </div>
     </div>
-    <div class="card2" style="margin-left:30px;">
+
+
+
+<!--MOST POPULAR PART - CODE RIGHT SIDE-->
+    <div class="card2" style="margin-left:30px; text-align:center;">
         <div class="text">
-            <div class="text info3" style=" margin:50px 10px 5px 0px; font-size:14px;text-align: center;">
+            <div class="text info3" style=" margin:50px 10px 25px 0px; font-size:14px;text-align: center;">
                 Most Popular
             </div>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
-            <p class="card-text1" >Meal Plan For March Week 1</p>
+            <p class="card-text1">Meal Plan For March Week 1</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/06/pexels-photo-710916-1-335x160.jpeg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Quick Chicken Pho</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Flank Steak with Orange and Avocado Salsa</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Hanger Steak Recipe</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">No-Soak Beans in the Pressure Cooker</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/fdlzbwip0am-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Choose The World’s Favorite Color</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Clementine Chicken Recipe</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
         <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/azoqcek2kuq-335x160.jpg"
-             style="width:231px; height:110px;" alt="...">
+             style="width:80%; height:5%;" alt="...">
         <div class="card-body">
             <p class="card-text1">Carrot Ginger Soup</p>
             <p class="card-text2"><small class="text-muted">George Steven • June 22, 2017</small></p>
         </div>
+
+
+
+<!--CATEGORY BLOCK CODE-->
+        <div class="text">
+            <div class="text info3" style=" margin:50px 10px 5px 0px; font-size:14px;text-align:center">Category Block</div>
+            <p> </p>
+        </div>
+        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/jupoxxrndca.jpg"
+             style="width:293px; height:130px;" alt="...">
+        <p> </p>
+        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/vj3ydxu6u_y.jpg"
+             style="width:293px; height:130px;" alt="...">
+        <p> </p>
+        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/l1zhjk-r6uc.jpg"
+             style="width:293px; height:130px;" alt="...">
+        <p> </p>
+        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/vj3ydxu6u_y.jpg"
+             style="width:293px; height:130px;" alt="...">
+        <p> </p>
+
+        <img src="https://themebubble.com/demo/magplus/recipepro/wp-content/uploads/sites/50/2017/02/hrlvr2zlunk.jpg"
+             style="width:293px; height:130px;" alt="...">
+        <p> </p>
     </div>
 </div>
-<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group" role="group" aria-label="page1">
-        <button type="button" class="buttonn"><b>1</b></button>
+
+
+
+<!-- PAGE NUMBERS (1,2,3,4,5) BUTTON CODE-->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="margin-top:10px;">
+        <div class="btn-group" role="group" aria-label="page1">
+            <button type="button" class="buttonn"><b>1</b></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="page2">
+            <button type="button" class="buttonn"><b>2</b></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="page3">
+            <button type="button" class="buttonn"><b>3</b></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button type="button" class="buttonn"><b>...</b></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="page5">
+            <button type="button" class="buttonn"><b>5</b></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Next Page">
+            <button type="button" class="buttonn"><b>Next>></b></button>
+        </div>
     </div>
-    <div class="btn-group" role="group" aria-label="page2">
-        <button type="button" class="buttonn"><b>2</b></button>
-    </div>
-    <div class="btn-group" role="group" aria-label="page3">
-        <button type="button" class="buttonn"><b>3</b></button>
-    </div>
-    <div class="btn-group" role="group" aria-label="Third group">
-        <button type="button" class="buttonn"><b>...</b></button>
-    </div>
-    <div class="btn-group" role="group" aria-label="page5">
-        <button type="button" class="buttonn"><b>5</b></button>
-    </div>
-    <div class="btn-group" role="group" aria-label="Next Page">
-        <button type="button" class="buttonn"><b>Next>></b></button>
-    </div>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
